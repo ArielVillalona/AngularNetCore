@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-payment-details',
-  templateUrl: './payment-details.component.html',
-  styleUrls: ['./payment-details.component.css']
+  templateUrl: './payment-details.component.html'
 })
 export class PaymentDetailsComponent implements OnInit {
 
