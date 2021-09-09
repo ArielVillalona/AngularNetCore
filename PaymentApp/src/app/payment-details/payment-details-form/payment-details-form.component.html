@@ -1,26 +1,29 @@
-<form>
+<form novalidate #form="ngForm">
   <input type="hidden" name="paymentDetailId" [value]="service.formData.paymentDetailId">
 
   <div class="form-group">
     <label>CARD OWNER NAME</label>
     <input type="text" class="form-control form-control-lg" placeholder="Full Name"
-      name="cardOwnerName" #cardOwnerName='ngModel'[(ngModel)]='service.formData.cardOwnerName'>
+      name="cardOwnerName" #cardOwnerName='ngModel'[(ngModel)]='service.formData.cardOwnerName' required>
   </div>
   <div class="form-group">
     <label>CARD NUMBER</label>
     <input type="text" class="form-control form-control-lg" placeholder="16 Digit Card Number"
-      name="cardNumber" #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber">
+      name="cardNumber" #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber" required maxlength="16" minlength="16" pattern="[0-9]+">
   </div>
   <div class="row">
     <div class="form-group col-md-6">
       <label>ESPIRATION DATE</label>
       <input type="text" class="form-control form-control-lg" placeholder="MM/YY"
-      name="expirationDate" #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate">
+      name="expirationDate" #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate" required maxlength="5" minlength="5">
     </div>
     <div class="form-group col-md-6">
       <label>SECURIRY CODE</label>
       <input type="password" class="form-control form-control-lg" placeholder="CCV"
-      name="securityCode" #securityCode="ngModel" [(ngModel)]="service.formData.securityCode">
+      name="securityCode" #securityCode="ngModel" [(ngModel)]="service.formData.securityCode" required maxlength="3" minlength="3">
     </div>
+  </div>
+  <div class="form-group d-grid gap-2">
+    <button class="btn btn-lg btn-block btn-info" type="submit" [disabled]="form.invalid" >SUBMIT</button>
   </div>
 </form>
