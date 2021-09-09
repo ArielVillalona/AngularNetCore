@@ -1,4 +1,4 @@
-<form #card='ngForm'>
+<form>
   <input type="hidden" name="paymentDetailId" [value]="service.formData.paymentDetailId">
 
   <div class="form-group">
@@ -11,14 +11,16 @@
     <input type="text" class="form-control form-control-lg" placeholder="16 Digit Card Number"
       name="cardNumber" #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber">
   </div>
-  <div class="form-group">
-    <label>ESPIRATION DATE</label>
-    <input type="text" class="form-control form-control-lg" placeholder="MM/YY"
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>ESPIRATION DATE</label>
+      <input type="text" class="form-control form-control-lg" placeholder="MM/YY"
       name="expirationDate" #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate">
-  </div>
-  <div class="form-group">
-    <label>SECURIRY CODE</label>
-    <input type="password" class="form-control form-control-lg" placeholder="CCV"
+    </div>
+    <div class="form-group col-md-6">
+      <label>SECURIRY CODE</label>
+      <input type="password" class="form-control form-control-lg" placeholder="CCV"
       name="securityCode" #securityCode="ngModel" [(ngModel)]="service.formData.securityCode">
+    </div>
   </div>
 </form>
