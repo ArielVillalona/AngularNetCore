@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { PaymentDetail } from 'src/app/shared/payment-detail.model';
 import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
 import { ToastrService } from 'ngx-toastr';
+import { PaymentDetails } from 'src/app/Models/paymentDetail.model';
 
 @Component({
   selector: 'app-payment-details-form',
@@ -51,6 +51,6 @@ export class PaymentDetailsFormComponent implements OnInit {
 
   resetForm(form:NgForm){
     form.form.reset();
-    this.service.formData = new PaymentDetail();
+    this.service.formData = new PaymentDetails();
   }
 }
