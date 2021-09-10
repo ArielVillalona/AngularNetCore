@@ -4,6 +4,9 @@ import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
 import { ToastrService } from 'ngx-toastr';
 import { PaymentDetails } from 'src/app/Models/paymentDetail.model';
 
+import { faCreditCard,faUser,faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
+import { faKey } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-payment-details-form',
   templateUrl: './payment-details-form.component.html',
@@ -11,6 +14,10 @@ import { PaymentDetails } from 'src/app/Models/paymentDetail.model';
   ]
 })
 export class PaymentDetailsFormComponent implements OnInit {
+  creditCard=faCreditCard;
+  user=faUser;
+  calendar=faCalendarAlt;
+  key = faKey;
 
   service:PaymentDetailService;
   constructor(_service:PaymentDetailService,private toastr: ToastrService) {
