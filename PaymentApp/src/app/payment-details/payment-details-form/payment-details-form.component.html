@@ -16,10 +16,19 @@
       <span class="input-group-text" id="basic-addon1">
         <fa-icon [icon]="creditCard"></fa-icon>
       </span>
-      <input type="text" class="form-control form-control-lg" placeholder="16 Digit Card Number" name="cardNumber"
-        #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber" required maxlength="16" minlength="16"
-        pattern="[0-9]+">
+      <input type="tel" ccNumber #ccNumber="ccNumber"
+      class="form-control form-control-lg"
+      placeholder="16 Digit Card Number"
+      name="cardNumber"
+        #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber"
+
+        >
+        <span class="scheme">{{ccNumber.resolvedScheme$ | async}}</span>
     </div>
+    <!-- <input type="tel" ccNumber #ccNumber="ccNumber">
+    <span class="scheme">{{ccNumber.resolvedScheme$ | async}}</span> -->
+    <!-- <input id="cc-exp-date" type="tel" autocomplete="cc-exp" ccExp> -->
+    <!-- <input id="cc-cvc" type="tel" autocomplete="off" ccCVC> -->
   </div>
   <div class="row">
     <div class="col-md-6">
@@ -27,8 +36,11 @@
         <span class="input-group-text" id="basic-addon1">
           <fa-icon [icon]="calendar"></fa-icon>
         </span>
-        <input type="text" class="form-control form-control-lg" placeholder="MM/YY" name="expirationDate"
-          #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate" required maxlength="5" minlength="5">
+        <input id="cc-exp-date" type="tel" autocomplete="cc-exp" ccExp
+        class="form-control form-control-lg"
+        placeholder="MM/YYYY" name="expirationDate"
+          #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate"
+          >
       </div>
     </div>
     <div class="col-md-6">
@@ -36,7 +48,9 @@
         <span class="input-group-text">
           <fa-icon [icon]="key"></fa-icon>
         </span>
-        <input type="password" class="form-control form-control-lg" placeholder="CCV" name="securityCode"
+        <input type="password"
+        class="form-control form-control-lg"
+        placeholder="CCV" name="securityCode"
           #securityCode="ngModel" [(ngModel)]="service.formData.securityCode" required maxlength="3" minlength="3">
       </div>
     </div>

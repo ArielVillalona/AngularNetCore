@@ -15,10 +15,10 @@ namespace PaymentAPI.Models
         [Column(TypeName ="nvarchar(50)")]
         public string CardOwnerName { get; set; }
 
-        [Column(TypeName = "nvarchar(16)")]
+        [Column(TypeName = "nvarchar(25)")]
         public string CardNumber { get; set; }
 
-        [Column(TypeName = "nvarchar(5)")]
+        [Column(TypeName = "nvarchar(12)")]
         public string ExpirationDate { get; set; }
 
         [Column(TypeName = "nvarchar(3)")]
